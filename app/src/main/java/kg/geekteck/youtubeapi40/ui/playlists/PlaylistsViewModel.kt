@@ -8,6 +8,7 @@ import kg.geekteck.youtubeapi40.models.Playlist
 import kg.geekteck.youtubeapi40.objects.Constants
 import kg.geekteck.youtubeapi40.remote.ApiService
 import kg.geekteck.youtubeapi40.remote.RetrofitClient
+import kg.geekteck.youtubeapi40.utils.Resource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,23 +18,28 @@ class PlaylistsViewModel : BaseViewModel() {
         RetrofitClient.create()
     }
 
-    fun getPlaylists(): LiveData<Playlist> {
+    fun getPlaylists(): LiveData<Resource<Playlist>> {
         return playlists()
     }
 
-    private fun playlists(): LiveData<Playlist> {
-        val data = MutableLiveData<Playlist>()
+    private fun playlists(): LiveData<Resource<Playlist>> {
+        val data = MutableLiveData<Resource<Playlist>>()
         apiService.getPlaylists(Constants.part, Constants.channelId, API_KEY, Constants.maxResults)
             .enqueue(object :
                 Callback<Playlist> {
                 override fun onResponse(call: Call<Playlist>, response: Response<Playlist>) {
-                    if (response.isSuccessful) {
-                        data.value = response.body()
+                    if (response.isSuccessful && response.body() != null) {
+                        val res = response.body()
+                        data.value = res?.let{
+                            Resource.success(it)
+                        }
+                    } else {
+                        data.value = Resource.error(response.message(), null)
                     }
                 }
 
                 override fun onFailure(call: Call<Playlist>, t: Throwable) {
-                    print(t.stackTrace)
+                    data.value = Resource.error(t.localizedMessage, null)
                 }
             })
         return data

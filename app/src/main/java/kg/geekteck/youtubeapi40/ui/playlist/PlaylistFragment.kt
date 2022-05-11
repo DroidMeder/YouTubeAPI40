@@ -6,8 +6,8 @@ import kg.geekteck.youtubeapi40.base.BaseNavFragment
 import kg.geekteck.youtubeapi40.base.BaseViewModel
 import kg.geekteck.youtubeapi40.databinding.FragmentPlaylistBinding
 import kg.geekteck.youtubeapi40.extensions.InternetChecker
-import kg.geekteck.youtubeapi40.extensions.NetworkStatus
 import kg.geekteck.youtubeapi40.extensions.showToast
+import kg.geekteck.youtubeapi40.utils.NetworkStatus
 
 class PlaylistFragment : BaseNavFragment<FragmentPlaylistBinding, BaseViewModel>() {
     private lateinit var args: PlaylistFragmentArgs
@@ -25,16 +25,19 @@ class PlaylistFragment : BaseNavFragment<FragmentPlaylistBinding, BaseViewModel>
 
     override fun checkInternet() {
         super.checkInternet()
-        InternetChecker(requireContext()).observe(this) {
+        InternetChecker(requireContext()).observe(requireActivity()) {
             when (it) {
                 NetworkStatus.Available -> initView()
-                NetworkStatus.Unavailable -> println("no internet")
+                NetworkStatus.Unavailable -> println("---1 No Internet")
             }
         }
     }
 
     override fun initView() {
         super.initView()
-        args.id?.let { requireContext().showToast(it) }
+        try {
+            args.id?.let { requireContext().showToast(it) }
+        } catch (e: Exception) {
+        }
     }
 }

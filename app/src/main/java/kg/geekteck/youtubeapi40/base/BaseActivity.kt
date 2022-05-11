@@ -13,9 +13,9 @@ abstract class BaseActivity<VM: BaseViewModel,VB: ViewBinding> : AppCompatActivi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        checkInternet()
         binding = inflateViewBinding(layoutInflater)
 
-        checkInternet()
         setContentView(binding.root)
         initViewModel()
         initView()

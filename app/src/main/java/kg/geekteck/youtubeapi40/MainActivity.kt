@@ -6,7 +6,7 @@ import kg.geekteck.youtubeapi40.base.BaseActivity
 import kg.geekteck.youtubeapi40.base.BaseViewModel
 import kg.geekteck.youtubeapi40.databinding.ActivityMainBinding
 import kg.geekteck.youtubeapi40.extensions.InternetChecker
-import kg.geekteck.youtubeapi40.extensions.NetworkStatus
+import kg.geekteck.youtubeapi40.utils.NetworkStatus
 
 class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>(){
     override fun inflateViewBinding(inflater: LayoutInflater): ActivityMainBinding {
@@ -17,7 +17,9 @@ class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>(){
         super.checkInternet()
         InternetChecker(this@MainActivity).observe(this) {
             binding.root.getViewById(R.id.inc).visibility = when (it) {
-                NetworkStatus.Available -> View.GONE
+                NetworkStatus.Available -> {
+                    View.GONE
+                }
                 NetworkStatus.Unavailable -> View.VISIBLE
             }
             binding.navHost.visibility = when (it) {

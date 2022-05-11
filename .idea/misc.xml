@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/cab_1.xml" value="0.1925" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/ic_internet_off.xml" value="0.1925" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1925" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/activity_main.xml" value="0.1875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/fragment_playlist.xml" value="0.2046875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/fragment_playlists.xml" value="0.2046875" />

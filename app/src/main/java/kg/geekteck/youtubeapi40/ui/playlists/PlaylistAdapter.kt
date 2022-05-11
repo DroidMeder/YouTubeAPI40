@@ -2,7 +2,6 @@ package kg.geekteck.youtubeapi40.ui.playlists
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kg.geekteck.youtubeapi40.R
@@ -16,8 +15,7 @@ class PlaylistAdapter(private var list: List<Item>, private var onItemClick: Som
     private val context: Context) : RecyclerView.Adapter<PlaylistAdapter.PlaylistsHolder>() {
 
 
-    class PlaylistsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = ItemBinding.bind(itemView)
+    class PlaylistsHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(i: Item, context: Context) = with(binding) {
             val uri = context.chooseTheMostQualityImage(i)
             context.glideSetter(uri, ivPlaylists)
@@ -28,8 +26,7 @@ class PlaylistAdapter(private var list: List<Item>, private var onItemClick: Som
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaylistsHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
-        return PlaylistsHolder(view)
+        return PlaylistsHolder(ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: PlaylistsHolder, position: Int) {

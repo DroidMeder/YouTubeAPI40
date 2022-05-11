@@ -1,20 +1,18 @@
 package kg.geekteck.youtubeapi40.extensions
 
-import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkCapabilities
-import android.net.NetworkRequest
+import android.content.Context
+import android.net.*
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import com.bumptech.glide.Glide
 import kg.geekteck.youtubeapi40.models.Item
 import kg.geekteck.youtubeapi40.objects.InternetAvailability
+import kg.geekteck.youtubeapi40.utils.NetworkStatus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import android.content.Context as Context
 
 fun Context.chooseTheMostQualityImage(i: Item): String {
     return try {
@@ -41,7 +39,7 @@ fun Context.chooseTheMostQualityImage(i: Item): String {
     }
 }
 
-fun Context.showToast(string: String){
+fun Context.showToast(string: String?){
     Toast.makeText(this, string, Toast.LENGTH_LONG).show()
 }
 
@@ -49,16 +47,12 @@ fun Context.glideSetter(uri: String, view: ImageView){
     Glide.with(this).load(uri).centerCrop().into(view)
 }
 
-sealed class NetworkStatus {
-    object Available : NetworkStatus()
-    object Unavailable : NetworkStatus()
-}
-
 class InternetChecker(context: Context) : LiveData<NetworkStatus>(){
     val internetList: ArrayList<Network> = ArrayList()
     private lateinit var connectivityManagerCallback: ConnectivityManager.NetworkCallback
     val connectivityManager: ConnectivityManager = context
         .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
 
     override fun onActive() {
         super.onActive()
@@ -88,6 +82,7 @@ class InternetChecker(context: Context) : LiveData<NetworkStatus>(){
         override fun onLost(network: Network) {
             super.onLost(network)
             internetList.remove(network)
+            internetList.clear()
             announceStatus()
         }
 
@@ -100,6 +95,7 @@ class InternetChecker(context: Context) : LiveData<NetworkStatus>(){
             }
             announceStatus()
         }
+
     }
 
     private fun determine(network: Network) {

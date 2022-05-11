@@ -11,7 +11,7 @@ object InternetAvailability {
             socket.close()
             true
         } catch (e: Exception){
-            e.printStackTrace()
+            e.printStackTrace().toString()
             false
         }
     }
