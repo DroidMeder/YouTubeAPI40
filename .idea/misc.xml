@@ -6,12 +6,20 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/cab_1.xml" value="0.1925" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/ic_internet_off.xml" value="0.1925" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1925" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/font/fjalla_one.xml" value="0.24322916666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/font/noto_sans.xml" value="0.24322916666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/font/noto_sans_bold.xml" value="0.24322916666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout-v28/fragment_playlist.xml" value="0.4" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout-v28/item_playlist.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/activity_main.xml" value="0.1875" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/fragment_playlist.xml" value="0.2046875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/fragment_playlist.xml" value="0.264" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/fragment_playlists.xml" value="0.2046875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/interner_collapsed.xml" value="0.2046875" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/internet_collapsed.xml" value="0.176" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/item.xml" value="0.264" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/layout/item_playlist.xml" value="0.264" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Geek/YouTubeAPI40/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>

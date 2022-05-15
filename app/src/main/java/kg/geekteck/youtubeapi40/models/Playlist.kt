@@ -9,17 +9,39 @@ data class Playlist(
 )
 
 data class ContentDetails(
-    val itemCount: Int
+    val itemCount: Int,
+    val videoId: String,
+    val videoPublishedAt: String,
+    val caption: String,
+    val contentRating: ContentRating,
+    val definition: String,
+    val dimension: String,
+    val duration: String,
+    val licensedContent: Boolean,
+    val projection: String
 )
 
+class ContentRating
+
 data class Snippet(
+    val thumbnails: Thumbnails,
+    val title: String,
+    val playlistId: String,
+    val position: Int,
+    val resourceId: ResourceId,
+    val videoOwnerChannelId: String,
+    val videoOwnerChannelTitle: String,
+    val categoryId: String,
     val channelId: String,
     val channelTitle: String,
+    val defaultAudioLanguage: String,
+    val defaultLanguage: String,
     val description: String,
+    val liveBroadcastContent: String,
     val localized: Localized,
     val publishedAt: String,
-    val thumbnails: Thumbnails,
-    val title: String
+    val tags: List<String>,
+
 )
 
 data class Default(
@@ -68,6 +90,11 @@ data class Standard(
     val height: Int,
     val url: String,
     val width: Int
+)
+
+data class ResourceId(
+    val kind: String,
+    val videoId: String
 )
 
 data class Thumbnails(

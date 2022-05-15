@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/custom_white"
+    tools:context="ui.playlist.PlaylistFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/custom_white"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow"
+            android:contentDescription="@string/image" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/imageView2"
+            android:clickable="true"
+            android:focusable="true"
+            android:letterSpacing="0.02"
+            android:lineHeight="22dp"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/back"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            android:translationY="-0.86sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:lineSpacingExtra="2sp"
+            android:translationY="-0.86sp"
+            android:letterSpacing="0.02"
+            android:lineHeight="22dp"
+            android:layout_centerInParent="true"
+            android:textSize="17sp"
+            android:textColor="@color/orange"
+            android:text="@string/back"
+            android:focusable="true" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

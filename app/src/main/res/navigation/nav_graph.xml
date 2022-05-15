@@ -16,6 +16,16 @@
             <argument
                 android:name="id"
                 app:argType="string" />
+            <argument
+                android:name="playlist_title"
+                app:argType="string" />
+            <argument
+                android:name="playlist_description"
+                app:argType="string" />
+            <argument
+                android:name="item_count"
+                app:argType="string" />
+
         </action>
 
     </fragment>
@@ -29,5 +39,21 @@
             app:argType="string"
             app:nullable="true"
             android:defaultValue="empty"/>
+        <argument
+            android:name="playlist_title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="empty"/>
+        <argument
+            android:name="playlist_description"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="empty"/>
+        <argument
+            android:name="item_count"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="empty"/>
+
     </fragment>
 </navigation>

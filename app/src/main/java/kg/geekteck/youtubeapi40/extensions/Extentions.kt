@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import com.bumptech.glide.Glide
 import kg.geekteck.youtubeapi40.models.Item
+import kg.geekteck.youtubeapi40.models.Video
 import kg.geekteck.youtubeapi40.objects.InternetAvailability
 import kg.geekteck.youtubeapi40.utils.NetworkStatus
 import kotlinx.coroutines.CoroutineScope
@@ -36,6 +37,21 @@ fun Context.chooseTheMostQualityImage(i: Item): String {
                 }
             }
         }
+    }
+}
+
+fun replacer(video: Video): String {
+    val st = video.duration.replace("S", "")
+        .replace("PT", "").replace("M", ":")
+    return if (st.contains("H")){
+        if (st.contains("DT")){
+            st.replace("DT", ":")
+                .replace("H", ":")
+        } else {
+            st.replace("H", ":")
+        }
+    } else {
+        st
     }
 }
 

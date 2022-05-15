@@ -1,19 +1,19 @@
 package kg.geekteck.youtubeapi40.ui.playlists
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import kg.geekteck.youtubeapi40.BuildConfig.API_KEY
 import kg.geekteck.youtubeapi40.base.BaseViewModel
 import kg.geekteck.youtubeapi40.models.Playlist
-import kg.geekteck.youtubeapi40.objects.Constants
-import kg.geekteck.youtubeapi40.remote.ApiService
-import kg.geekteck.youtubeapi40.remote.RetrofitClient
+import kg.geekteck.youtubeapi40.reposiyories.PlaylistRepository
 import kg.geekteck.youtubeapi40.utils.Resource
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class PlaylistsViewModel : BaseViewModel() {
+    private val playlistRepository = PlaylistRepository()
+
+    fun getPlaylists(): LiveData<Resource<Playlist>> {
+        return playlistRepository.getPlaylists()
+    }
+    /*
+    //was actual before coroutines
     private val apiService: ApiService by lazy {
         RetrofitClient.create()
     }
@@ -43,5 +43,5 @@ class PlaylistsViewModel : BaseViewModel() {
                 }
             })
         return data
-    }
+    }*/
 }

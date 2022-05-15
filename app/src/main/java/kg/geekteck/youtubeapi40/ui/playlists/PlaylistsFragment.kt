@@ -54,7 +54,7 @@ class PlaylistsFragment : BaseNavFragment<FragmentPlaylistsBinding, BaseViewMode
     }
 
     private fun initDate(items: List<Item>?) {
-        binding.rec.adapter = items?.let { PlaylistAdapter(it, this, requireContext()) }
+        binding.rec.adapter = items?.let { PlaylistsAdapter(it, this, requireContext()) }
     }
 
     override fun inflateViewBinding(inflater: LayoutInflater): FragmentPlaylistsBinding {
@@ -63,7 +63,8 @@ class PlaylistsFragment : BaseNavFragment<FragmentPlaylistsBinding, BaseViewMode
 
     override fun clickOnItem(any: Any) {
         if (any is Item) navigate(PlaylistsFragmentDirections
-            .actionPlaylistsFragmentToPlaylistFragment(any.id))
+            .actionPlaylistsFragmentToPlaylistFragment(any.id, any.snippet.title,
+                any.snippet.description, any.contentDetails.itemCount.toString()))
     }
 
     override fun onStart() {
