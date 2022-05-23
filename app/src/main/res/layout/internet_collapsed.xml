@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:contentDescription="@string/image"
+            app:srcCompat="@drawable/ic_internet_off" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/no_internet_connection"
+            android:fontFamily="@font/fjalla_one"
+            android:textFontWeight="400"
+            android:layout_marginHorizontal="20.11dp"
+            android:textColor="@color/dark_gray"
+            android:textSize="16sp"
+            tools:targetApi="28" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_try_switch_on_internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/noto_sans_bold"
+        android:lineHeight="21.79dp"
+        android:text="@string/try_again"
+        android:textFontWeight="600"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="4dp"
+        tools:targetApi="28" />
+</FrameLayout>
